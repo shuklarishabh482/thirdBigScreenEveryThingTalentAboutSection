@@ -1,19 +1,17 @@
-
+'use client';
 import { FC } from 'react';
 import Link from 'next/link';
 import { Moon, Sun, ArrowRight } from 'lucide-react';
-import { ThemeProvider , useTheme} '@/context/ThemeContext' ;
-
+import { useTheme } from '@/context/ThemeContext'; 
 import { Logo } from './Logo';
 import { Navbar } from './Navigation';
-
 interface HeaderProps {
   currentPath: string;
 }
 
 export const Header: FC<HeaderProps> = ({ currentPath }) => {
   const { isDarkMode, toggleDarkMode } = useTheme();
-
+ console.log(currentPath)
   return (
     <header className="border-b border-gray-700 bg-black dark:bg-black shadow-sm">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
@@ -21,7 +19,7 @@ export const Header: FC<HeaderProps> = ({ currentPath }) => {
           <Link href="/" className="flex items-center">
             <Logo />
           </Link>
-          <Navbar currentPath={currentPath} />
+          <Navbar />
         </div>
         <div className="flex items-center space-x-4">
           <Link 

@@ -1,14 +1,16 @@
 
+'use client';
 import { FC, useState } from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
-} from "@/components/ui/sheet" ;
+} from '@/components/ui/sheet';
+
 
 interface MobileNavItemProps {
   href: string;
@@ -18,11 +20,11 @@ interface MobileNavItemProps {
 }
 
 const MobileNavItem: FC<MobileNavItemProps> = ({ href, active, children, onClick }) => (
-  <Link 
-    href={href} 
+  <Link
+    href={href}
     className={cn(
-      "flex items-center justify-between py-3 px-4 text-base font-medium border-b border-gray-100 dark:border-gray-700",
-      active ? "text-violet-600 dark:text-violet-400" : "text-gray-900 dark:text-gray-200"
+      'flex items-center justify-between py-3 px-4 text-base font-medium border-b border-gray-100 dark:border-gray-700',
+      active ? 'text-violet-600 dark:text-violet-400' : 'text-gray-900 dark:text-gray-200'
     )}
     onClick={onClick}
   >
@@ -37,7 +39,6 @@ interface MobileNavProps {
 
 export const MobileNavigation: FC<MobileNavProps> = ({ currentPath }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showSolutions, setShowSolutions] = useState(false);
 
   const closeMenu = () => setIsOpen(false);
 
@@ -65,3 +66,20 @@ export const MobileNavigation: FC<MobileNavProps> = ({ currentPath }) => {
                 <X className="h-5 w-5" />
               </Button>
             </div>
+
+            {/* Navigation items */}
+            <MobileNavItem href="/about" active={currentPath === '/about'} onClick={closeMenu}>
+              About
+            </MobileNavItem>
+            <MobileNavItem href="/services" active={currentPath === '/services'} onClick={closeMenu}>
+              Services
+            </MobileNavItem>
+            <MobileNavItem href="/contact" active={currentPath === '/contact'} onClick={closeMenu}>
+              Contact
+            </MobileNavItem>
+          </div>
+        </SheetContent>
+      </Sheet>
+    </div>
+  );
+};

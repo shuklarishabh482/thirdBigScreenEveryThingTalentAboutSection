@@ -2,9 +2,8 @@
 
 'use client';
 
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { WorldMap } from "./WorldMap";
-
 export function MissionSection() {
   const dots = [
     {
@@ -17,7 +16,7 @@ export function MissionSection() {
   return (
 
     <section className="relative w-full h-[600px] flex items-center justify-center bg-sky-500">
-  {/* bg-[#1e3a5f] */}
+
 
       <WorldMap dots={dots} />
 

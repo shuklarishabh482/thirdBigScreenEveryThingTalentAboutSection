@@ -4,6 +4,7 @@
 import { FC } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 export const OurStandards: FC = () => {
   return (
@@ -33,15 +34,15 @@ export const OurStandards: FC = () => {
             borderImage: 'linear-gradient(to right, #FF5EBC, #4C6FFF, #FFC542) 1',
           }}
         >
-          <img 
-            // src="/images/dashboard.jpg" 
+  
+    <Image 
             src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FheroBg2.7b22de17.png&w=1536&q=75"
-            height={"600px"}
-            width={"600px"}
-
-            alt="HR Analytics Dashboard" 
+            height={600}
+            width={600}
+            alt="HR Analytics Dashboard"
             className="w-full h-auto object-cover"
           />
+
           <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/10 to-transparent"></div>
         </div>
       </div>

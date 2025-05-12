@@ -2,7 +2,7 @@
 'use client';
 import * as React from 'react';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
-import { Check, ChevronRight } from 'lucide-react';
+import {  ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 const DropdownMenu = DropdownMenuPrimitive.Root;
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
@@ -83,7 +83,7 @@ const DropdownMenuItem = React.forwardRef<
 ));
 DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName;
 
-export {
+ export  {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
@@ -94,4 +94,5 @@ export {
   DropdownMenuGroup,
   DropdownMenuPortal,
   DropdownMenuRadioGroup,
+
 };

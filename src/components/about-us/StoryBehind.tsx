@@ -27,8 +27,6 @@ import { Card, CardContent } from "@/components/ui/card" ;
 import { LucideIcon, BrainCircuit, Users, GraduationCap, Forward } from "lucide-react";
 import Image from "next/image";
 
-// import AboutUsImage from "@/assets/about-us.jpg";
-
 const icons: Record<string, LucideIcon> = {
   "brain-circuit": BrainCircuit,
   "users": Users,
