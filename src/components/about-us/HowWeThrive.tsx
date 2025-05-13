@@ -61,22 +61,23 @@ const icons: Record<string, LucideIcon> = {
   star: Star,
   award: Award,
 };
-
 export default function HowWeThrive() {
   return (
     <section id="thrive" className="py-20 bg-gradient-to-br from-white to-purple-50">
       <div className="container mx-auto px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* Left Image */}
-        <div className="rounded-3xl overflow-hidden shadow-lg">
+
+       
+        <div className="w-full max-w-md h-[560px] mx-auto overflow-hidden">
           <Image
-            // src="https://www.shutterstock.com/shutterstock/photos/1818068240/display_1500/stock-photo-analyst-working-with-spreadsheet-business-data-on-computer-1818068240.jpg" // Place the image in public/images/
             src="https://www.everythingtalent.ai/_next/image?url=%2Fassets%2Flanding-page%2Finsight-img-2.jpeg&w=1090&q=75"
             alt="Working together"
-            width={"800"}
-            height={"700"}
-            className="w-full h-auto object-cover"
+            width={400}
+            height={500}
+            className="w-full h-[550px]  object-cover"
           />
         </div>
+
 
         {/* Right Content */}
         <div>
@@ -108,5 +109,7 @@ export default function HowWeThrive() {
     </section>
   );
 }
+
+
 
   

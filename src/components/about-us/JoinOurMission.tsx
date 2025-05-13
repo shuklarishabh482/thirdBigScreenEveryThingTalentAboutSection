@@ -5,7 +5,7 @@ import { Moon, Sun, ArrowRight } from 'lucide-react';
 import {  useTheme}  from '@/context/ThemeContext' ;
 
 import { Logo } from './Logo';
-import { Navbar } from './Navigation';
+import { Navbar } from './Navbar';
 
 interface HeaderProps {
   currentPath: string;

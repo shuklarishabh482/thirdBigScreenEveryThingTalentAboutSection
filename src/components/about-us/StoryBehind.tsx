@@ -22,7 +22,7 @@
       icon: "forward",
     },
   ];
-// import { aboutUsFeatures } from "@/data/aboutUsFeatures";
+
 import { Card, CardContent } from "@/components/ui/card" ;
 import { LucideIcon, BrainCircuit, Users, GraduationCap, Forward } from "lucide-react";
 import Image from "next/image";
@@ -41,10 +41,10 @@ export default function StoryBehind() {
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Left Content */}
           <div>
-            <h2 className="text-4xl font-extrabold tracking-tight text-gray-900">
+            <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">
               The <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">Story</span> Behind Us
             </h2>
-            <p className="mt-4 text-gray-600 text-lg">
+            <p className="mt-4 text-gray-600 text-sm">
               It all started with one question: What if hiring didn’t have to feel like gambling on a hunch?
             </p>
 
@@ -55,7 +55,7 @@ export default function StoryBehind() {
                   <Card key={title} className="shadow-md bg-white/80 backdrop-blur-md border-none">
                     <CardContent className="p-6 flex flex-col gap-2">
                       <Icon className="text-purple-500 w-6 h-6" />
-                      <h4 className="font-semibold text-amber-900">{title}</h4>
+                      <h4 className="font-semibold text-black">{title}</h4>
                       <p className="text-sm text-gray-700">{description}</p>
                     </CardContent>
                   </Card>
@@ -65,16 +65,16 @@ export default function StoryBehind() {
           </div>
 
           {/* Right Image */}
-          <div className="rounded-2xl overflow-hidden shadow-lg border border-pink-200">
+         
+          <div className="w-full max-w-md h-[450px] mx-auto overflow-hidden rounded-2xl border-pink-200">
+
             <Image
-              src={"https://images.stockcake.com/public/f/b/b/fbb188df-6d93-463f-8556-f376ac4ef330_large/corporate-presentation-meeting-stockcake.jpg"}
-              alt="Team collaboration"
+            
+              src={"https://www.everythingtalent.ai/assets/about-us/our-story.svg"}
               className="w-full h-full object-cover"
-             
               width={800}
               height={500}
-            //   blurDataURL="https://images.unsplash.com/photo-1522071820081-009f0129c71c"
-            
+             alt="Group"
             />
           </div>
         </div>

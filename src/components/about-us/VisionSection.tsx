@@ -1,10 +1,7 @@
 
-
 'use client';
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
-
 const tabs = [
   {
     id: "ambition",
@@ -13,8 +10,7 @@ const tabs = [
     subheading: "Ambition",
     description:
       "Hiring doesn't have to be a painful guessing game. We're bridging the gap between recruiters and software engineers through our platform, where talent and opportunity finally meet, creating the perfect match.",
-    // image: "https://www.everythingtalent.ai/assets/about-us/ambition.jpg", // <-- replace with your actual image path
-    image : "https://www.everythingtalent.ai/assets/about-us/our-story.svg",
+    image : "https://www.everythingtalent.ai/assets/about-us/ambition.jpg",
   
   },
   {
@@ -41,11 +37,10 @@ const tabs = [
     heading: "Security-Driven Solutions",
     subheading: "Vigilance",
     description:
-      "Confidence starts with security, and we are committed to enhancing your experience. Your security is woven into every part of our platform so you can drive forward without a second thought.",
+      "Confidence starts with security, and we are committed to enhancing your experience. Your security is woven into every part of our platform so you can drive forward without a second thought. ",
     image: "https://www.everythingtalent.ai/assets/about-us/security.jpg",
   },
 ];
-
 export function VisionSection() {
   return (
     <section className="py-20 bg-gradient-to-b from-pink-50 to-white dark:from-gray-900 dark:to-black relative">
@@ -60,18 +55,24 @@ export function VisionSection() {
           Driven by vision, we provide comprehensive solutions to meet all your hiring needs.
         </p>
 
-        <Tabs defaultValue="ambition" className="w-full">
-          <TabsList className="flex flex-wrap justify-center bg-white dark:bg-gray-800 rounded-full shadow-md mb-8 gap-2 p-2">
-            {tabs.map((tab) => (
-              <TabsTrigger
-                key={tab.id}
-                value={tab.id}
-                className="rounded-full px-4 py-2 text-sm font-medium data-[state=active]:bg-purple-100 dark:data-[state=active]:bg-purple-800 data-[state=active]:text-purple-800 dark:data-[state=active]:text-white"
-              >
-                {tab.title}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+       
+        <Tabs defaultValue="ambition" className="w-full max-w-4xl mx-auto max-h-xs">
+    
+<TabsList className="w-full max-w-md mx-auto flex justify-between bg-gray-100 dark:bg-gray-800 rounded-full p-1 shadow-md">
+  {tabs.map((tab) => (
+    <TabsTrigger
+      key={tab.id}
+      value={tab.id}
+      className="flex-1 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 py-2 px-3 transition-all duration-300
+        data-[state=active]:bg-purple-200 
+        dark:data-[state=active]:bg-purple-700 
+        data-[state=active]:text-purple-900 
+        dark:data-[state=active]:text-white"
+    >
+      {tab.title}
+    </TabsTrigger>
+  ))}
+</TabsList>
 
           {tabs.map((tab) => (
             <TabsContent key={tab.id} value={tab.id}>
@@ -80,12 +81,13 @@ export function VisionSection() {
                   <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
                     {tab.heading}
                   </h3>
-                  <h4 className="text-lg font-medium text-purple-600 dark:text-purple-400 mb-4">
+                  <h4 className="text-lg font-medium text-gray-600 dark:text-purple-400 mb-4">
                     {tab.subheading}
                   </h4>
                   <p className="text-gray-600 dark:text-gray-300">{tab.description}</p>
                 </div>
-                <div className="flex-1">
+                {/* <div className="flex-1"> */}
+                <div className="w-full max-w-md h-[350px] mx-auto flex-1 overflow-hidden">
                   <Image
                     src={tab.image}
                     alt={tab.title}
@@ -102,3 +104,13 @@ export function VisionSection() {
     </section>
   );
 }
+
+
+
+
+
+
+
+
+
+

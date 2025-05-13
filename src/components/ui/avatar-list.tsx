@@ -68,7 +68,7 @@ export default function AvatarList({
             <Image
   src={item.image}
   alt={item.name}
-  width={64} // example, adjust according to size
+  width={64} 
   height={64}
   className={cn("rounded-full object-cover", sizes[size] ?? sizes.md)}
 />

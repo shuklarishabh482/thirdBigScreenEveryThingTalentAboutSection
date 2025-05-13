@@ -1,11 +1,9 @@
 
-
 // src/components/HeroSection.tsx
 import { FC } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-
 export const OurStandards: FC = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
