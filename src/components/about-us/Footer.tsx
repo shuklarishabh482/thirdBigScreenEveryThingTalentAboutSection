@@ -1,120 +1,150 @@
+
 'use client';
 import Image from "next/image";
 import { Twitter, Linkedin, Youtube, Facebook } from "lucide-react";
 import Link from "next/link";
+
 export const Footer = () => {
   return (
-    <footer className="relative bg-black text-white pt-16 pb-40 overflow-hidden">
-      {/* Grid split into left (logo) and right (navs) */}
-      <div className="container mx-auto px-6 md:px-20 flex flex-col md:flex-row justify-between items-start gap-6
-      md:gap-6  relative z-10">
-        
-        {/* Left Logo Section */}
-        <div className="flex flex-col space-y-2 max-w-sm">
-          <Image
-            src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Facme-logo-dark.d4da7bf2.png&w=384&q=75"
-            alt="Everything Talent Logo"
-            width={160}
-            height={160}
-          />
-    <h3 className="text-2xl md:text-3xl font-semibold text-white">Everything Talent</h3>
-    <p className="text-base text-gray-300">
+    <footer className="relative bg-black text-white pt-20 pb-[650px] text-sm md:text-base overflow-visible">
+      {/* Grid container */}
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col lg:flex-row lg:gap-x-70 items-start z-20 relative">
+        {/* Left section */}
+        <div className="flex flex-col space-y-4 max-w-md">
+          <div className="relative w-40 h-16">
+            <Image
+              src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Facme-logo-dark.d4da7bf2.png&w=384&q=75"
+              alt="Everything Talent Logo"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <h3 className="text-xl md:text-2xl font-semibold">Everything Talent</h3>
+          <p className="text-gray-300 max-w-xs">
             Enhancing Hiring with AI-powered assessment and tracking for accurate recruitment.
-     </p>
-    <div className="flex space-x-4 pt-2">
+          </p>
+          <div className="flex space-x-3 pt-2">
             {[Twitter, Linkedin, Youtube, Facebook].map((Icon, idx) => (
               <Link href="#" key={idx} aria-label="social-link">
                 <Icon className="w-6 h-6 text-black hover:text-pink-500 transition bg-white p-1 rounded-full" />
               </Link>
             ))}
-       </div>
-  </div>
+          </div>
+        </div>
 
-        {/* Right Nav Sections */}
-        <div className="flex flex-col sm:flex-row gap-8 md:gap-16">
-          {/* Resources */}
-          <nav>
-            <h4 className="mb-4 text-lg font-semibold uppercase text-white">Resources</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              {["Blogs", "Success Stories", "Case Studies", "Whitepapers", "FAQs", "Hiring Guides", "Support"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="hover:text-pink-500 transition text-base">{item}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Get Started */}
-          <nav>
-            <h4 className="mb-4 text-lg font-semibold uppercase text-white">Get Started</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              {["Pricing", "Hiring Solutions", "Funded Startups", "Free Trial", "Contact Support", "Request Demo", "Trust"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="hover:text-pink-500 transition text-base">{item}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Legal */}
-          <nav>
-            <h4 className="mb-4 text-lg font-semibold uppercase text-white">Legal</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              {["Privacy Policy", "Terms of Service", "Cookie Policy", "CCPA Compliance"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="hover:text-pink-500 transition text-base">{item}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+        {/* Navigation links */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 lg:gap-x-1 w-full mt-10 lg:mt-0">
+          {[
+            {
+              title: "Resources",
+              links: ["Blogs", "Success Stories", "Case Studies", "Whitepapers", "FAQs", "Hiring Guides", "Support"],
+            },
+            {
+              title: "Get Started",
+              links: ["Pricing", "Hiring Solutions", "Funded Startups", "Free Trial", "Contact Support", "Request Demo", "Trust"],
+            },
+            {
+              title: "Legal",
+              links: ["Privacy Policy", "Terms of Service", "Cookie Policy", "CCPA Compliance"],
+            },
+          ].map((section, index) => (
+            <nav key={index} className="min-w-[140px] w-full">
+              <h4 className="mb-4 font-semibold uppercase text-white text-base">{section.title}</h4>
+              <ul className="space-y-2 text-gray-400">
+                {section.links.map((item) => (
+                  <li key={item}>
+                    <Link href="#" className="hover:text-pink-500 transition">
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
         </div>
       </div>
 
-      {/* Brand bottom right */}
-      <div className="flex justify-center md:justify-end px-6 mt-12">
-        <div className="text-pink-500 text-2xl font-bold">
+      {/* Branding */}
+      <div className="mt-16 px-4 sm:px-6 lg:px-12 text-center md:text-right relative z-10">
+        <div className="text-pink-500 text-lg md:text-xl lg:text-2xl font-bold">
           EVERYTHINGTALENT.AI
         </div>
       </div>
 
-      {/* Background image at bottom */}
-      <div className="absolute bottom-0 left-0 w-full h-[250px] md:h-[400px] z-0 overflow-hidden">
-        <Image
-          src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbottom_san_fransisco_skyline.d6d7fc0b.png&w=1536&q=75"
-          alt="Cityscape"
-          layout="fill"
-          objectFit="cover"
-          className="animate-slide-up"
-        />
+      {/* Curved Background Image */}
+
+{/* <div className="absolute bottom-0 left-0 w-full h-[650px] z-0 pointer-events-none overflow-hidden">
+  <div
+    className="relative w-full h-full"
+    style={{
+      clipPath: 'ellipse(120% 80% at 50% 100%)', // Wider + gentler curve
+    }}
+  >
+    <Image
+      src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbottom_san_fransisco_skyline.d6d7fc0b.png&w=1536&q=75"
+      alt="Cityscape"
+      fill
+      className="object-cover object-bottom"
+      sizes="100vw"
+      priority
+    />
+  </div>
+</div> */}
+      {/* Curved Background Image */}
+{/* <div className="absolute bottom-0 left-0 w-full h-[650px] z-0 pointer-events-none overflow-hidden">
+  <div className="relative w-full h-full [clip-path:ellipse(100%_100%_at_50%_100%)]">
+    <Image
+      src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbottom_san_fransisco_skyline.d6d7fc0b.png&w=1536&q=75"
+      alt="Cityscape"
+      fill
+      className="object-cover object-bottom"
+      sizes="100vw"
+      priority
+    />
+  </div>
+</div> */}
+
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[1800px] h-[650px] z-0 pointer-events-none overflow-hidden">
+        <div className="relative w-full h-full [clip-path:ellipse(80%_100%_at_50%_100%)]">
+          <Image
+            src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbottom_san_fransisco_skyline.d6d7fc0b.png&w=1536&q=75"
+            alt="Cityscape"
+            fill
+            className="object-cover object-bottom"
+            sizes="100vw"
+            priority
+          />
+        </div>
       </div>
     </footer>
   );
 };
 
-
 // 'use client';
 // import Image from "next/image";
 // import { Twitter, Linkedin, Youtube, Facebook } from "lucide-react";
 // import Link from "next/link";
+
 // export const Footer = () => {
 //   return (
-//     <footer className="relative bg-black text-white pt-16 pb-40 overflow-hidden">
-//       {/* Content Grid */}
-//       <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
-
-//         {/* Logo & Info */}
-//         <div className="flex flex-col space-y-4">
-//           <Image
-//             src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Facme-logo-dark.d4da7bf2.png&w=384&q=75"
-//             alt="Everything Talent Logo"
-//             width={160}
-//             height={160}
-//           />
-//           <h3 className="text-2xl md:text-3xl font-semibold text-white">Everything Talent</h3>
-//           <p className="text-base text-gray-300 max-w-sm">
+//     <footer className="relative bg-black text-white pt-20 pb-[650px] text-sm md:text-base overflow-visible">
+//       {/* Grid container */}
+//       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col lg:flex-row lg:gap-x-70 items-start z-20 relative">
+//         {/* Left section */}
+//         <div className="flex flex-col space-y-4 max-w-md">
+//           <div className="relative w-40 h-16">
+//             <Image
+//               src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Facme-logo-dark.d4da7bf2.png&w=384&q=75"
+//               alt="Everything Talent Logo"
+//               fill
+//               className="object-contain"
+//             />
+//           </div>
+//           <h3 className="text-xl md:text-2xl font-semibold">Everything Talent</h3>
+//           <p className="text-gray-300 max-w-xs">
 //             Enhancing Hiring with AI-powered assessment and tracking for accurate recruitment.
 //           </p>
-//           <div className="flex space-x-4 pt-2">
+//           <div className="flex space-x-3 pt-2">
 //             {[Twitter, Linkedin, Youtube, Facebook].map((Icon, idx) => (
 //               <Link href="#" key={idx} aria-label="social-link">
 //                 <Icon className="w-6 h-6 text-black hover:text-pink-500 transition bg-white p-1 rounded-full" />
@@ -123,58 +153,156 @@ export const Footer = () => {
 //           </div>
 //         </div>
 
-//         {/* Resources */}
-//         <nav>
-//           <h4 className="mb-4 text-lg font-semibold uppercase text-white">Resources</h4>
-//           <ul className="space-y-2 text-sm text-gray-400">
-//             {["Blogs", "Success Stories", "Case Studies", "Whitepapers", "FAQs", "Hiring Guides", "Support"].map((item) => (
-//               <li key={item}>
-//                 <Link href="#" className="hover:text-pink-500 transition text-base">{item}</Link>
-//               </li>
-//             ))}
-//           </ul>
-//         </nav>
-
-//         {/* Get Started */}
-//         <nav>
-//           <h4 className="mb-4 text-lg font-semibold uppercase text-white">Get Started</h4>
-//           <ul className="space-y-2 text-sm text-gray-400">
-//             {["Pricing", "Hiring Solutions", "Funded Startups", "Free Trial", "Contact Support", "Request Demo", "Trust"].map((item) => (
-//               <li key={item}>
-//                 <Link href="#" className="hover:text-pink-500 transition text-base">{item}</Link>
-//               </li>
-//             ))}
-//           </ul>
-//         </nav>
-
-//         {/* Legal */}
-//         <nav>
-//           <h4 className="mb-4 text-lg font-semibold uppercase text-white">Legal</h4>
-//           <ul className="space-y-2 text-sm text-gray-400">
-//             {["Privacy Policy", "Terms of Service", "Cookie Policy", "CCPA Compliance"].map((item) => (
-//               <li key={item}>
-//                 <Link href="#" className="hover:text-pink-500 transition text-base">{item}</Link>
-//               </li>
-//             ))}
-//           </ul>
-//         </nav>
+//         {/* Navigation links */}
+//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 lg:gap-x-1 w-full mt-10 lg:mt-0">
+//           {[
+//             {
+//               title: "Resources",
+//               links: ["Blogs", "Success Stories", "Case Studies", "Whitepapers", "FAQs", "Hiring Guides", "Support"],
+//             },
+//             {
+//               title: "Get Started",
+//               links: ["Pricing", "Hiring Solutions", "Funded Startups", "Free Trial", "Contact Support", "Request Demo", "Trust"],
+//             },
+//             {
+//               title: "Legal",
+//               links: ["Privacy Policy", "Terms of Service", "Cookie Policy", "CCPA Compliance"],
+//             },
+//           ].map((section, index) => (
+//             <nav key={index} className="min-w-[140px] w-full">
+//               <h4 className="mb-4 font-semibold uppercase text-white text-base">{section.title}</h4>
+//               <ul className="space-y-2 text-gray-400">
+//                 {section.links.map((item) => (
+//                   <li key={item}>
+//                     <Link href="#" className="hover:text-pink-500 transition">
+//                       {item}
+//                     </Link>
+//                   </li>
+//                 ))}
+//               </ul>
+//             </nav>
+//           ))}
+//         </div>
 //       </div>
 
-//       {/* Brand bottom right */}
-//       <div className="flex justify-center md:justify-end px-6 mt-12">
-//         <div className="text-pink-500 text-2xl font-bold">
+//       {/* Branding */}
+//       <div className="mt-16 px-4 sm:px-6 lg:px-12 text-center md:text-right relative z-10">
+//         <div className="text-pink-500 text-lg md:text-xl lg:text-2xl font-bold">
 //           EVERYTHINGTALENT.AI
 //         </div>
 //       </div>
 
-//       {/* Background image at bottom */}
-//       <div className="absolute bottom-0 left-0 w-full h-[250px] md:h-[400px] z-0 overflow-hidden">
+//       {/* Background cityscape image with curved mask */}
+//       {/* Background cityscape image with consistent curved shape */}
+
+
+//       <div className="absolute bottom-0 left-0 w-full h-[650px] z-0 pointer-events-none overflow-hidden">
+//         <div className="relative w-full h-full">
+//           <Image
+//             src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbottom_san_fransisco_skyline.d6d7fc0b.png&w=1536&q=75"
+//             alt="Cityscape"
+//             fill
+//             className="object-cover object-bottom"
+//             sizes="100vw"
+//             priority
+//           />
+         
+//           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black [mask-image:radial-gradient(ellipse_at_center,white_30%,transparent_80%)]"></div>
+//         </div>
+
+//       </div> 
+//     </footer>
+//   );
+// };
+
+
+
+// 'use client';
+// import Image from "next/image";
+// import { Twitter, Linkedin, Youtube, Facebook } from "lucide-react";
+// import Link from "next/link";
+
+// export const Footer = () => {
+//   return (
+//     <footer className="relative bg-black text-white pt-20 pb-[650px] text-sm md:text-base overflow-visible">
+//       {/* Grid container */}
+     
+// <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col lg:flex-row lg:gap-x-70 items-start z-20 relative">
+
+//         {/* Left section */}
+//         <div className="flex flex-col space-y-4 max-w-md">
+//           <div className="relative w-40 h-16">
+//             <Image
+//               src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Facme-logo-dark.d4da7bf2.png&w=384&q=75"
+//               alt="Everything Talent Logo"
+//               fill
+//               className="object-contain"
+//             />
+//           </div>
+//           <h3 className="text-xl md:text-2xl font-semibold">Everything Talent</h3>
+//           <p className="text-gray-300 max-w-xs">
+//             Enhancing Hiring with AI-powered assessment and tracking for accurate recruitment.
+//           </p>
+//           <div className="flex space-x-3 pt-2">
+//             {[Twitter, Linkedin, Youtube, Facebook].map((Icon, idx) => (
+//               <Link href="#" key={idx} aria-label="social-link">
+//                 <Icon className="w-6 h-6 text-black hover:text-pink-500 transition bg-white p-1 rounded-full" />
+//               </Link>
+//             ))}
+//           </div>
+//         </div>
+
+
+// {/* Navigation links */}
+// <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 lg:gap-x-1 w-full">
+
+
+//           {[
+//             {
+//               title: "Resources",
+//               links: ["Blogs", "Success Stories", "Case Studies", "Whitepapers", "FAQs", "Hiring Guides", "Support"],
+//             },
+//             {
+//               title: "Get Started",
+//               links: ["Pricing", "Hiring Solutions", "Funded Startups", "Free Trial", "Contact Support", "Request Demo", "Trust"],
+//             },
+//             {
+//               title: "Legal",
+//               links: ["Privacy Policy", "Terms of Service", "Cookie Policy", "CCPA Compliance"],
+//             },
+//           ].map((section, index) => (
+//             <nav key={index} className="min-w-[140px] w-full">
+//               <h4 className="mb-4 font-semibold uppercase text-white text-base">{section.title}</h4>
+//               <ul className="space-y-2 text-gray-400">
+//                 {section.links.map((item) => (
+//                   <li key={item}>
+//                     <Link href="#" className="hover:text-pink-500 transition">
+//                       {item}
+//                     </Link>
+//                   </li>
+//                 ))}
+//               </ul>
+//             </nav>
+//           ))}
+//         </div>
+//       </div>
+
+//       {/* Branding */}
+//       <div className="mt-16 px-4 sm:px-6 lg:px-12 text-center md:text-right relative z-10">
+//         <div className="text-pink-500 text-lg md:text-xl lg:text-2xl font-bold">
+//           EVERYTHINGTALENT.AI
+//         </div>
+//       </div>
+
+//       {/* Background cityscape image */}
+//       <div className="absolute bottom-0 left-0 w-full h-[650px] z-0 pointer-events-none">
 //         <Image
 //           src="https://www.everythingtalent.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbottom_san_fransisco_skyline.d6d7fc0b.png&w=1536&q=75"
 //           alt="Cityscape"
-//           layout="fill"
-//           objectFit="cover"
-//           className="animate-slide-up"
+//           fill
+//           className="object-cover object-bottom"
+//           sizes="100vw"
+//           priority
 //         />
 //       </div>
 //     </footer>
