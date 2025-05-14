@@ -17,13 +17,7 @@ const philosophyItems: PhilosophyItem[] = [
     hashtag: "HONESTY",
     bgColor: "bg-yellow-300 text-yellow-900",
   },
-  {
-    id: 2,
-    title: "Embrace hard work",
-    description: "#HARDWORK",
-    hashtag: "HARDWORK",
-    bgColor: "bg-orange-300 text-orange-900",
-  },
+ 
   {
     id: 3,
     title: "We act with urgency to ensure progress and deliver results efficiently. Every moment matters.",
@@ -31,6 +25,23 @@ const philosophyItems: PhilosophyItem[] = [
     hashtag: "URGENCY",
     bgColor: "bg-purple-500 text-white",
   },
+
+    {
+    id: 2,
+    title: "Embrace hard work",
+    description: "#HARDWORK",
+    hashtag: "HARDWORK",
+    bgColor: "bg-orange-300 text-orange-900",
+  },
+
+   {
+    id: 5,
+    title: "We’re here to help you aim higher, break limits, and achieve what others might think impossible.",
+    description: "#ASPIRATION",
+    hashtag: "ASPIRATION",
+    bgColor: "bg-lime-300 text-lime-900",
+  },
+
   {
     id: 4,
     title: "Grow 1% every day",
@@ -38,13 +49,7 @@ const philosophyItems: PhilosophyItem[] = [
     hashtag: "GROWTHMINDSET",
     bgColor: "bg-green-100 text-green-900",
   },
-  {
-    id: 5,
-    title: "We’re here to help you aim higher, break limits, and achieve what others might think impossible.",
-    description: "#ASPIRATION",
-    hashtag: "ASPIRATION",
-    bgColor: "bg-lime-300 text-lime-900",
-  },
+
   {
     id: 6,
     title: "DO HARD THINGS",
@@ -52,6 +57,7 @@ const philosophyItems: PhilosophyItem[] = [
     hashtag: "RESILIENT",
     bgColor: "bg-gray-200 text-gray-900 font-bold text-xl",
   },
+
   {
     id: 7,
     title: "We value fresh ideas, bold solutions, and the freedom to imagine what’s next.",
@@ -83,13 +89,6 @@ const philosophyItems: PhilosophyItem[] = [
 ];
 
 export default function PhilosophySection() {
-  const rowChunks = [
-    philosophyItems.slice(0, 3), 
-    philosophyItems.slice(3, 5), 
-    philosophyItems.slice(5, 8), 
-    philosophyItems.slice(8, 10), 
-  ];
-
   return (
     <section id="philosophy" className="py-20 bg-pink-50">
       <div className="text-center mb-12 px-4">
@@ -104,28 +103,56 @@ export default function PhilosophySection() {
         </p>
       </div>
 
-      <div className="space-y-4 px-4 lg:px-16">
-        {rowChunks.map((row, rowIndex) => (
-          <div
-            key={rowIndex}
-            className="flex flex-wrap gap-4 justify-center lg:justify-start"
-          >
-            {row.map((item) => (
-              <div
-                key={item.id}
-                className={`p-6 rounded-xl min-h-[160px] ${
-                  row.length === 2
-                    ? "flex-1 basis-[48%] max-w-full"
-                    : "flex-1 min-w-[250px] max-w-[33%]"
-                } ${item.bgColor}`}
-              >
-                <div className="text-sm font-semibold">0{item.id}</div>
-                <div className="mt-2 font-bold">{item.title}</div>
-                <div className="mt-2 text-sm">{item.description}</div>
-              </div>
-            ))}
-          </div>
-        ))}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4 lg:px-16 auto-rows-min">
+        {philosophyItems.map((item) => {
+          let spanClasses = "";
+
+          switch (item.id) {
+            // Row 1: 1 (2), 2 (1), 3 (1)
+            case 1:
+              spanClasses = "col-span-2";
+              break;
+            case 2:
+            case 3:
+              spanClasses = "col-span-1";
+              break;
+
+            // Row 2: 4 (2), 5 (2)
+            case 4:
+            case 5:
+              spanClasses = "col-span-2";
+              break;
+
+            // Row 3: 6 (1), 7 (2), 8 (1)
+            case 6:
+            case 8:
+              spanClasses = "col-span-1";
+              break;
+            case 7:
+              spanClasses = "col-span-2";
+              break;
+
+            // Row 4: 9 (2), 10 (2)
+            case 9:
+            case 10:
+              spanClasses = "col-span-2";
+              break;
+
+            default:
+              spanClasses = "col-span-1";
+          }
+
+          return (
+            <div
+              key={item.id}
+              className={`p-6 rounded-xl min-h-[160px] ${item.bgColor} ${spanClasses}`}
+            >
+              <div className="text-xl font-semibold">0{item.id}</div>
+              <div className="mt-2 font-bold text-xl">{item.title}</div>
+              <div className="mt-2 text-xl">{item.description}</div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
