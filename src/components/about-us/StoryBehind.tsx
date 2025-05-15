@@ -1,8 +1,4 @@
-
-
-
-"use client";
-
+'use client';
 const aboutUsFeatures = [
   {
     title: "AI-Powered",
@@ -46,22 +42,24 @@ const icons: Record<string, LucideIcon> = {
   forward: Forward,
 };
 
-
 export default function StoryBehind() {
   return (
-    <section id="about" className="py-16 bg-gradient-to-b from-white to-pink-50">
+    <section
+      id="about"
+      className="py-16 bg-gradient-to-b from-white to-pink-50 dark:from-black dark:to-zinc-900 transition-colors duration-300"
+    >
       <div className="w-full px-4 sm:px-6 lg:px-16 max-w-screen-xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Left Content */}
           <div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
               The{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
                 Story
               </span>{" "}
               Behind Us
             </h2>
-            <p className="mt-4 text-gray-600 text-sm sm:text-base">
+            <p className="mt-4 text-gray-600 dark:text-gray-300 text-sm sm:text-base">
               It all started with one question: What if hiring didn’t have to feel like gambling on a hunch?
             </p>
 
@@ -71,14 +69,14 @@ export default function StoryBehind() {
                 return (
                   <Card
                     key={title}
-                    className="shadow-md bg-white/80 backdrop-blur-md border-none"
+                    className="shadow-md bg-white/80 dark:bg-zinc-800/80 backdrop-blur-md border-none transition-colors duration-300"
                   >
                     <CardContent className="p-6 flex flex-col gap-2">
                       <Icon className="text-purple-500 w-6 h-6" />
-                      <h4 className="font-semibold text-black text-base sm:text-lg">
+                      <h4 className="font-semibold text-black dark:text-white text-base sm:text-lg">
                         {title}
                       </h4>
-                      <p className="text-sm text-gray-700">{description}</p>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">{description}</p>
                     </CardContent>
                   </Card>
                 );
@@ -87,7 +85,7 @@ export default function StoryBehind() {
           </div>
 
           {/* Right Image */}
-          <div className="w-full max-w-md mx-auto sm:max-w-full sm:h-[400px] lg:h-[450px] overflow-hidden rounded-2xl border border-pink-200">
+          <div className="w-full max-w-md mx-auto sm:max-w-full sm:h-[400px] lg:h-[450px] overflow-hidden rounded-2xl border border-pink-200 dark:border-zinc-700 transition-colors duration-300">
             <Image
               src="https://www.everythingtalent.ai/assets/about-us/our-story.svg"
               className="w-full h-full object-cover"
@@ -103,11 +101,57 @@ export default function StoryBehind() {
 }
 
 
+// // legacy codebase 
+// "use client";
+
+// const aboutUsFeatures = [
+//   {
+//     title: "AI-Powered",
+//     description: "Advanced AI/ML algorithms for precise matching",
+//     icon: "brain-circuit",
+//   },
+//   {
+//     title: "Human-Centric",
+//     description: "Built by recruiters, for recruiters",
+//     icon: "users",
+//   },
+//   {
+//     title: "Skill Assessment",
+//     description: "Comprehensive skill evaluation system",
+//     icon: "graduation-cap",
+//   },
+//   {
+//     title: "Future-Ready",
+//     description: "Constantly evolving with industry needs",
+//     icon: "forward",
+//   },
+// ];
+
+// import {
+//   Card,
+//   CardContent,
+// } from "@/components/ui/card";
+// import {
+//   LucideIcon,
+//   BrainCircuit,
+//   Users,
+//   GraduationCap,
+//   Forward,
+// } from "lucide-react";
+// import Image from "next/image";
+
+// const icons: Record<string, LucideIcon> = {
+//   "brain-circuit": BrainCircuit,
+//   users: Users,
+//   "graduation-cap": GraduationCap,
+//   forward: Forward,
+// };
+
 
 // export default function StoryBehind() {
 //   return (
 //     <section id="about" className="py-16 bg-gradient-to-b from-white to-pink-50">
-//       <div className="container mx-auto px-4 sm:px-6 lg:px-16">
+//       <div className="w-full px-4 sm:px-6 lg:px-16 max-w-screen-xl mx-auto">
 //         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 //           {/* Left Content */}
 //           <div>

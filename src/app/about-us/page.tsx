@@ -10,7 +10,6 @@ import SlidingCards from "@/components/about-us/SlidingCard";
 
 import StoryBehind from "@/components/about-us/StoryBehind";
 import { VisionSection } from "@/components/about-us/VisionSection";
-
 function Page (){
     return (
     <> 

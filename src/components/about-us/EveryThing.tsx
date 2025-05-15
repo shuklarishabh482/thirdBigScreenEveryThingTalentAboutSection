@@ -2,14 +2,12 @@ import { FC } from 'react';
 import Link from 'next/link';
 import { Moon, Sun, ArrowRight } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext'; 
-
 import { Logo } from './Logo';
 import { Navbar } from './Navbar';
 
 interface HeaderProps {
   currentPath: string;
 }
-
 
 export const EveryThing: FC<HeaderProps> = ({ currentPath }) => {
   const { isDarkMode, toggleDarkMode } = useTheme();

@@ -3,7 +3,6 @@
 // import Link from 'next/link';
 // import { Moon, Sun, ArrowRight } from 'lucide-react';
 // import { ThemeProvider , useTheme} '@/context/ThemeContext' ;
-
 // import { Logo } from './Logo';
 // import { Navbar } from './Navigation';
 

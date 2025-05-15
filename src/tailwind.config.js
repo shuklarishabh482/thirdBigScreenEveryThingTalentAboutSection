@@ -3,7 +3,9 @@
 
 module.exports = {
     darkMode: 'class', // <--- REQUIRED
-    content: ['./src/**/*.{js,ts,jsx,tsx}'],
+    content: ['./src/**/*.{js,ts,jsx,tsx}',
+      './app/**/*.{js,ts,jsx,tsx}',
+    ],
     theme: {
       extend: {},
     },
